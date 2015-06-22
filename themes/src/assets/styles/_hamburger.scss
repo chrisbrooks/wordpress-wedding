@@ -1,0 +1,68 @@
+.hamburger{
+	box-sizing: border-box;
+	display: block;
+	width:100%;
+	width: 70px;
+	height: 55px;
+	position: absolute;
+	top: 10px;
+	left: 0;
+	z-index: 4;
+	cursor:pointer;
+	@include transition(all, 0.4s, ease);
+	-webkit-transform: translateZ(0) translate3D(0,0,0);
+	-moz-transform: translateZ(0) translate3D(0,0,0);
+	-o-transform: translateZ(0) translate3D(0,0,0);
+	-ms-transform: translateZ(0) translate3D(0,0,0);
+	transform: translateZ(0) translate3D(0,0,0);
+	&:before,&:after,span {
+		background: #fff;
+		content: '';
+		display: block;
+		width: 30px;
+		height: 5px;
+		position: absolute;
+		left: 20px;
+		@include transition(all, 0.5s, ease);
+		-webkit-transform: translateZ(0) translate3D(0,0,0);
+		-moz-transform: translateZ(0) translate3D(0,0,0);
+		-o-transform: translateZ(0) translate3D(0,0,0);
+		-ms-transform: translateZ(0) translate3D(0,0,0);
+		transform: translateZ(0) translate3D(0,0,0);
+		-webkit-transition-property: transform, top, bottom, left, opacity;
+		transition-property: transform, top, bottom, left, opacity;
+	}
+	&:before{
+		top:10px;
+	}
+	span{
+		top:20px;
+	}
+	&:after{
+		top:30px;
+	}
+}
+
+.mm-opening .hamburger{
+	&:before, &:after{
+		top: 20px;
+	}
+	span{
+		left: -50px;
+		opacity: 0;
+	}
+	&:before{
+		transform: rotate(45deg);
+		-webkit-transform: rotate(45deg);
+		-moz-transform: rotate(45deg);
+		-o-transform: rotate(45deg);
+		-ms-transform: rotate(45deg);
+	}
+	&:after{
+		transform: rotate(-45deg);
+		-webkit-transform: rotate(-45deg);
+		-moz-transform: rotate(-45deg);
+		-o-transform: rotate(-45deg);
+		-ms-transform: rotate(-45deg);
+	}
+}

@@ -1,0 +1,65 @@
+$primary: #aabdd4;
+$secondary: #666;
+$black: #000;
+$white: #fff;
+$green:#65af85;
+$blue:#5fadbc;
+$offGrey:#94a7bd;
+$purple: #b669c2;
+$grey: #999;
+
+@mixin transition($transition-property, $transition-time, $method) {
+    -webkit-transition: $transition-property $transition-time $method;
+    -moz-transition: $transition-property $transition-time $method;
+    -ms-transition: $transition-property $transition-time $method;
+    -o-transition: $transition-property $transition-time $method;
+    transition: $transition-property $transition-time $method;
+}
+
+@mixin rotateY ($deg) {
+	-webkit-transform: rotateY($deg);
+	-moz-transform: rotateY($deg);
+	-ms-transform: rotateY($deg);
+	-o-transform: rotateY($deg);
+}
+
+@mixin border_radius ($radius: 4px) {
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  -o-border-radius: $radius;
+  border-radius: $radius;
+}
+
+@mixin transform ($transform) {
+  -webkit-transform: $transform;
+  -moz-transform: $transform;
+  -o-transform: $transform;
+  transform: $transform;
+}
+
+@mixin box_shadow ($shadow) {
+  -webkit-box-shadow: $shadow;
+  -moz-box-shadow: $shadow;
+  -o-box-shadow: $shadow;
+  box-shadow: $shadow;
+}
+
+@mixin opacity($value) {
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(opacity=" + ($value * 100) + ")"; /* for IE8 in IE7 mode */
+  filter: alpha(opacity=($value * 100)); /* for IE6-IE8 */
+  -moz-opacity: ($value);
+  opacity: ($value);
+}
+
+@mixin backface ($hidden) {
+	-webkit-backface-visibility: ($hidden);
+	-moz-backface-visibility: ($hidden);
+	-ms-backface-visibility: ($hidden);
+	backface-visibility: ($hidden);
+}
+
+@mixin radius($radius) {
+-webkit-border-radius: $radius;
+border-radius: $radius;
+}
+

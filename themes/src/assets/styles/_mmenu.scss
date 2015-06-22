@@ -1,0 +1,182 @@
+.mm-hidden {
+  display: none !important; }
+
+.mm-wrapper {
+  overflow-x: hidden;
+  position: relative; }
+
+.mobile-navigation,
+.mobile-navigation > .mm-panel, {
+  margin: 0;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 0; }
+
+.mobile-navigation {
+  background: inherit;
+  display: block;
+  overflow: hidden;
+  padding: 0;
+  @media (max-width: 767px) {
+    display:none;
+  }
+}
+
+.mm-panel {
+  -webkit-transition: -webkit-transform 0.4s ease;
+  -moz-transition: -moz-transform 0.4s ease;
+  -ms-transition: -ms-transform 0.4s ease;
+  -o-transition: -o-transform 0.4s ease;
+  transition: transform 0.4s ease;
+  -webkit-transform: translate3d(100%, 0, 0);
+  -moz-transform: translate3d(100%, 0, 0);
+  -ms-transform: translate3d(100%, 0, 0);
+  -o-transform: translate3d(100%, 0, 0);
+  transform: translate3d(100%, 0, 0); }
+  .mm-panel.mm-opened {
+    -webkit-transform: translate3d(0%, 0, 0);
+    -moz-transform: translate3d(0%, 0, 0);
+    -ms-transform: translate3d(0%, 0, 0);
+    -o-transform: translate3d(0%, 0, 0);
+    transform: translate3d(0%, 0, 0); }
+  .mm-panel.mm-subopened {
+    -webkit-transform: translate3d(-30%, 0, 0);
+    -moz-transform: translate3d(-30%, 0, 0);
+    -ms-transform: translate3d(-30%, 0, 0);
+    -o-transform: translate3d(-30%, 0, 0);
+    transform: translate3d(-30%, 0, 0); }
+  .mm-panel.mm-highest {
+    z-index: 1; }
+
+.mobile-navigation > .mm-panel {
+  background: inherit;
+  -webkit-overflow-scrolling: touch;
+  overflow: scroll;
+  overflow-x: hidden;
+  overflow-y: auto;
+  box-sizing: border-box;
+  padding: 0 20px; }
+
+.mobile-navigation{
+	background:$black;
+	ul{
+		padding:20px 0px;
+		margin-bottom:0px;
+		li{
+			list-style-type:none;
+			&.mm-selected{
+				a{
+					color:$white !important;
+				}
+			}
+
+			a{
+				color:#999;
+				text-decoration:none;
+				display:block;
+				margin-bottom:10px;
+				@include transition(all, 0.5s, ease);
+				&:hover{
+					color:#65af85;
+				}
+			}
+		}
+	}
+}
+
+
+
+
+/*
+	jQuery.mmenu offcanvas addon CSS
+*/
+.mm-page {
+  box-sizing: border-box;
+  position: relative; }
+
+.mm-slideout {
+  -webkit-transition: -webkit-transform 0.4s ease;
+  -ms-transition: -ms-transform 0.4s ease;
+  transition: transform 0.4s ease; }
+
+html.mm-opened {
+  overflow: hidden;
+  position: relative; }
+  html.mm-opened body {
+    overflow: hidden; }
+
+html.mm-background .mm-page {
+  background: inherit; }
+
+#mm-blocker {
+  background: rgba(3, 2, 1, 0);
+  display: none;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999999; }
+
+html.mm-opened #mm-blocker,
+html.mm-blocking #mm-blocker {
+  display: block; }
+
+.mobile-navigation.mm-offcanvas {
+  display: none;
+  position: fixed; }
+.mobile-navigation.mm-current {
+  display: block; }
+
+.mobile-navigation {
+  /*width: 50%;
+  min-width: 140px;
+  max-width: 440px; */
+  width:150px;
+}
+
+html.mm-opening .mm-slideout {
+  /*-webkit-transform: translate(50%, 0);
+  -moz-transform: translate(50%, 0);
+  -ms-transform: translate(50%, 0);
+  -o-transform: translate(50%, 0);
+  transform: translate(50%, 0);*/
+
+  -webkit-transform: translate(150px, 0);
+    -moz-transform: translate(150px, 0);
+    -ms-transform: translate(150px, 0);
+    -o-transform: translate(150px, 0);
+    transform: translate(150px, 0);}
+
+/*@media all and (max-width: 175px) {
+  html.mm-opening .mm-slideout {
+    -webkit-transform: translate(140px, 0);
+    -moz-transform: translate(140px, 0);
+    -ms-transform: translate(140px, 0);
+    -o-transform: translate(140px, 0);
+    transform: translate(140px, 0); } }
+@media all and (min-width: 550px) {
+  html.mm-opening .mm-slideout {
+    -webkit-transform: translate(440px, 0);
+    -moz-transform: translate(440px, 0);
+    -ms-transform: translate(440px, 0);
+    -o-transform: translate(440px, 0);
+    transform: translate(440px, 0); } }*/
+
+/*
+	jQuery.mmenu dragOpen addon CSS
+*/
+html.mm-opened.mm-dragging .mobile-navigation,
+html.mm-opened.mm-dragging .mm-page,
+html.mm-opened.mm-dragging .mm-fixed-top,
+html.mm-opened.mm-dragging .mm-fixed-bottom,
+html.mm-opened.mm-dragging #mm-blocker {
+  -webkit-transition-duration: 0s;
+  -moz-transition-duration: 0s;
+  -ms-transition-duration: 0s;
+  -o-transition-duration: 0s;
+  transition-duration: 0s; }
+
